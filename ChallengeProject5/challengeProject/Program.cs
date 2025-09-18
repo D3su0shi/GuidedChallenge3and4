@@ -35,6 +35,17 @@ while (!shouldExit)
     } 
     else 
     {
+        if (PlayerIsFaster()) 
+        {
+            Move(1, false);
+        } 
+        else if (PlayerIsSick()) 
+        {
+            FreezePlayer();
+        } else 
+        {
+            Move(otherKeysExit: false);
+        }
         if (GotFood())
         {
             ChangePlayer();
@@ -67,6 +78,15 @@ void ShowFood()
 bool GotFood()
 {
     return playerY == foodY && playerX == foodX;
+}
+
+bool PlayerIsSick()
+{
+    return player.Equals(states[2]);
+}
+bool PlayerIsFaster() 
+{
+    return player.Equals(states[1]);
 }
 
 // Changes the player to match the food consumed
