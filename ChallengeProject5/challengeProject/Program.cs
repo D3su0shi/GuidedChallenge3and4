@@ -35,17 +35,6 @@ while (!shouldExit)
     } 
     else 
     {
-        if (PlayerIsFaster()) 
-        {
-            Move(1, false);
-        } 
-        else if (PlayerIsSick()) 
-        {
-            FreezePlayer();
-        } else 
-        {
-            Move(otherKeysExit: false);
-        }
         if (GotFood())
         {
             ChangePlayer();
@@ -73,6 +62,11 @@ void ShowFood()
     // Display the food at the location
     Console.SetCursorPosition(foodX, foodY);
     Console.Write(foods[food]);
+}
+
+bool GotFood()
+{
+    return playerY == foodY && playerX == foodX;
 }
 
 // Changes the player to match the food consumed
