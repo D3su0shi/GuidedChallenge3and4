@@ -1,14 +1,8 @@
-﻿Console.WriteLine("Generating random numbers:");
-DisplayRandomNumbers();
+﻿using System;
 
-void DisplayRandomNumbers() 
+string[] pettingZoo = 
 {
-    Random random = new Random();
-
-    for (int i = 0; i < 5; i++) 
-    {
-        Console.Write($"{random.Next(1, 100)} ");
-    }
-
-    Console.WriteLine();
-}
+    "alpacas", "capybaras", "chickens", "ducks", "emus", "geese", 
+    "goats", "iguanas", "kangaroos", "lemurs", "llamas", "macaws", 
+    "ostriches", "pigs", "ponies", "rabbits", "sheep", "tortoises",
+};
