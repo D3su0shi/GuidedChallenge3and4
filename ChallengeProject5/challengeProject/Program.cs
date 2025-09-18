@@ -75,25 +75,6 @@ void ShowFood()
     Console.Write(foods[food]);
 }
 
-// Returns true if the player location matches the food location
-bool GotFood() 
-{
-    return playerY == foodY && playerX == foodX;
-}
-
-// Returns true if the player appearance represents a sick state
-bool PlayerIsSick() 
-{
-    return player.Equals(states[2]);
-}
-
-// Returns true if the player appearance represents a fast state
-bool PlayerIsFaster() 
-{
-    return player.Equals(states[1]);
-}
-
-
 // Changes the player to match the food consumed
 void ChangePlayer() 
 {
